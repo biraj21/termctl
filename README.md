@@ -40,7 +40,7 @@ const termctl = require("termctl");
 
 * Reset background color
   ```javascript
-  termctl.color.reset_bg(255, 255, 0);
+  termctl.color.reset_bg();
   ```
 
 * Set foreground color
