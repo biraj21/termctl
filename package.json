@@ -1,7 +1,7 @@
 {
   "name": "termctl",
-  "version": "0.1.0",
-  "description": "Just a minimal library to do some basic terminal stuff.",
+  "version": "0.1.1",
+  "description": "A simple library to do some basic terminal stuff.",
   "main": "index.js",
   "scripts": {
     "test": "node tests/test.js"

@@ -13,10 +13,9 @@ const termctl = require("../index.js");
         const uname = await termctl.gets("Username: ");
         const pswd = await termctl.gets("Password: ", false);
 
-        // validation or something...
+        // validation...
 
-        // just for debugging
-        console.log(`Username: ${uname}, Password: ${pswd}`);
+        console.log("Login successful...");
     } catch(err) {
         console.error(err);
     } finally {

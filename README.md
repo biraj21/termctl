@@ -1,31 +1,38 @@
 # Termctl
-Just a minimal & simple library to do some basic terminal stuff.
+A simple library to do some basic terminal stuff.
+
+![Screenshot](ss.jpg)
 
 # Usage
 ```javascript
 const termctl = require("termctl");
 ```
 
-<b>Note:</b> I have just tested this on my Linux Mint so I don't know if changing colors will work on Windows or Mac.
+**Note:** I have tested this just on my Linux Mint so I don't know if changing colors will work on Windows or Mac.
 
 # Methods
 
 ## Input/Output
 
-* You need to call ``init()`` method once before using ``gets()`` method to take input because <b>termctl</b> uses Node.js's <b>readline</b> module, so ``init()`` will be used to create an instance of ``readline.Interface``.
+[1]: <https://nodejs.org/api/readline.html#readline_class_interface>
+[2]: <https://nodejs.org/api/readline.html#readline_rl_close>
+
+- You need to call `init()` method once before using `gets()` because **termctl** uses Node.js's **readline** module, so `init()` will be used to create an instance of [`readline.Interface`][1].
 
   ```javascript
   termctl.init();
   ```
 
-* ``gets()`` prints a prompt message and takes user input from the terminal (stdin). <b>It returns the value in a promise.</b> First argumemt is the prompt messeage to be displayed. Second argument specifies whether to print what user is typing (echo). Default value is ``true``.
+- `gets()` is used to take user input from the terminal (stdin). First argument is the prompt message to be displayed. Second argument specifies whether to print what user is typing (echo). It's default value is `true`.
 
   ```javascript
+  // termctl.gets(query?: string, echo?: boolean) => Promise<any>
+
   const uname = await termctl.gets("Enter your name: ");
   const pswd = await termctl.gets("Enter password: ", false);
   ```
 
-* Call ``close()`` to close the ``readline.Interface`` instance and relinquish control over input and output streams (stdin and stdin).
+- Call `close()` to [close][2] the [`readline.Interface`][1] instance.
 
   ```javascript
   termctl.close();
@@ -33,29 +40,40 @@ const termctl = require("termctl");
 
 ## Styling
 Just using escape sequences inside these methods for changing styles.
-<br><br>
 
-* Set background color
+- Set background color
   ```javascript
-  termctl.color.set_bg(255, 255, 100); // r, g, b
+  // termctl.color.set_bg(r: number, g: number, b: number): void
+
+  termctl.color.set_bg(255, 255, 100);
   ```
 
-* Reset background color
+- Reset background color
   ```javascript
+  // termctl.color.reset_bg(): void
+
   termctl.color.reset_bg();
   ```
 
-* Set foreground color
+- Set foreground color
   ```javascript
-  termctl.color.set_fg(0, 0, 0); // r, g, b
+  // termctl.color.set_bg(r: number, g: number, b: number): void
+
+  termctl.color.set_fg(0, 0, 0);
   ```
 
-* Reset foreground color
+- Reset foreground color
   ```javascript
+  // termctl.color.reset_bg(): void
+
   termctl.color.reset_fg();
   ```
 
-* Reset all styles
+- Reset all styles
   ```javascript
+  // termctl.color.reset_styles(): void
+
   termctl.color.reset_styles();
   ```
+
+Read _tests/test.js_ to see it in action.
