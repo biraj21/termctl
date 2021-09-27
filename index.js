@@ -43,7 +43,7 @@ module.exports = {
     },
 
     /***  Styles  ***/
-    color = {
+    color: {
         set_bg(r, g, b) {
             stdout.write(`\x1b[48;2;${r};${g};${b}m`);
         },
