@@ -61,6 +61,18 @@ module.exports = {
         },
     },
 
+    set_bold(bold = true) {
+        stdout.write(`\x1b[${bold ? 1 : 22}m`);
+    },
+
+    set_italic(italic = true) {
+        stdout.write(`\x1b[${italic ? 3 : 23}m`);
+    },
+
+    set_underline(underline = true) {
+        stdout.write(`\x1b[${underline ? 4 : 24}m`);
+    },
+
     reset_styles() {
         stdout.write("\x1b[m")
     },

@@ -1,7 +1,7 @@
 # Termctl
 A simple library to do some basic terminal stuff.
 
-![Screenshot](ss.jpg)
+![Screenshot](ss.png)
 
 # Usage
 ```javascript
@@ -48,7 +48,7 @@ Just using escape sequences inside these methods for changing styles.
   termctl.color.set_bg(255, 255, 100);
   ```
 
-- Reset background color
+- Reset background color to default
   ```javascript
   // termctl.color.reset_bg(): void
 
@@ -62,18 +62,39 @@ Just using escape sequences inside these methods for changing styles.
   termctl.color.set_fg(0, 0, 0);
   ```
 
-- Reset foreground color
+- Reset foreground color to default
   ```javascript
   // termctl.color.reset_bg(): void
 
   termctl.color.reset_fg();
   ```
 
-- Reset all styles
+- Bold
+  ```javascript
+  // termctl.set_bold(bold?: boolean): void
+
+  termctl.color.set_bold();
+  ```
+
+- Italic
+  ```javascript
+  // termctl.set_italic(italic?: boolean): void
+
+  termctl.color.set_italic();
+  ```
+
+- Underline
+  ```javascript
+  // termctl.set_underline(underline?: boolean): void
+
+  termctl.color.set_underline();
+  ```
+
+- Reset all styles to default
   ```javascript
   // termctl.color.reset_styles(): void
 
   termctl.color.reset_styles();
   ```
 
-Read _tests/test.js_ to see it in action.
+> Read _tests/test.js_ to see termctl in action.
