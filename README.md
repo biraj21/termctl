@@ -1,7 +1,6 @@
 # Termctl
 Just a minimal & simple library to do some basic terminal stuff.
 
-
 # Usage
 ```javascript
 const termctl = require("termctl");
@@ -26,13 +25,11 @@ const termctl = require("termctl");
   termctl.gets("Enter password: ", false);
   ```
 
-
 * Call ``close()`` to close the ``readline.Interface`` instance and relinquish control over input and output streams (stdin and stdin).
 
   ```javascript
   termctl.close();
   ```
-
 
 ## Styling
 
@@ -53,5 +50,5 @@ const termctl = require("termctl");
 
 * Reset foreground color
   ```javascript
-  termctl.color.reset_fg(255, 255, 0);
+  termctl.color.reset_fg();
   ```

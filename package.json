@@ -7,5 +7,9 @@
     "test": "node tests/test.js"
   },
   "author": "Biraj biraj795@gmail.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/biraj21/termctl.git"
+  },
   "license": "ISC"
 }
