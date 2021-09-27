@@ -12,17 +12,17 @@ const termctl = require("termctl");
 
 ## Input/Output
 
-* You need to call ``init()`` method once before using ``gets()`` method to take input because <b>termctl</b> uses Node.js's <b>readline</b> module so ``init()`` will be used to create an instance of ``readline.Interface``.
+* You need to call ``init()`` method once before using ``gets()`` method to take input because <b>termctl</b> uses Node.js's <b>readline</b> module, so ``init()`` will be used to create an instance of ``readline.Interface``.
 
   ```javascript
   termctl.init();
   ```
 
-* Used to take user input from the terminal (stdin). First argumemt is the prompt messeage to be displayed. Second argument specifies whether to print what user is typing (echo). Default value is ``true``.
+* ``gets()`` prints a prompt message and takes user input from the terminal (stdin). <b>It returns the value in a promise.</b> First argumemt is the prompt messeage to be displayed. Second argument specifies whether to print what user is typing (echo). Default value is ``true``.
 
   ```javascript
-  termctl.gets("Enter your name: ");
-  termctl.gets("Enter password: ", false);
+  const uname = await termctl.gets("Enter your name: ");
+  const pswd = await termctl.gets("Enter password: ", false);
   ```
 
 * Call ``close()`` to close the ``readline.Interface`` instance and relinquish control over input and output streams (stdin and stdin).
@@ -32,6 +32,8 @@ const termctl = require("termctl");
   ```
 
 ## Styling
+Just using escape sequences inside these methods for changing styles.
+<br><br>
 
 * Set background color
   ```javascript
@@ -51,4 +53,9 @@ const termctl = require("termctl");
 * Reset foreground color
   ```javascript
   termctl.color.reset_fg();
+  ```
+
+* Reset all styles
+  ```javascript
+  termctl.color.reset_styles();
   ```
