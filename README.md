@@ -8,7 +8,7 @@ A simple library to do some basic terminal stuff.
 const termctl = require("termctl");
 ```
 
-**Note:** I have tested this just on my Linux Mint so I don't know if changing colors will work on Mac.
+**Note:** I have tested this just on my Linux Mint and Windows but I don't know if changing colors will work on Mac.
 
 # Methods
 
