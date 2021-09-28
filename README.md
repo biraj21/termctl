@@ -8,7 +8,7 @@ A simple library to do some basic terminal stuff.
 const termctl = require("termctl");
 ```
 
-**Note:** I have tested this just on my Linux Mint and Windows but I don't know if changing colors will work on Mac.
+**Note:** We have tested this on Linux Mint and Windows 10 but we don't know if changing colors will work on Mac.
 
 # Methods
 
@@ -40,27 +40,29 @@ const termctl = require("termctl");
 
 ## Styling
 
-- Sets background color
+- Set background color
   ```javascript
   // termctl.color.set_bg(r: number, g: number, b: number): void
 
   termctl.color.set_bg(255, 255, 100);
+
   // (or) css style hex colors
   termctl.color.set_bg(0xFFFF64); // 0xRRGGBB format
   ```
 
-- Resets background color to default
+- Reset background color to default
   ```javascript
   // termctl.color.reset_bg(): void
 
   termctl.color.reset_bg();
   ```
 
-- Sets foreground color
+- Set foreground color
   ```javascript
   // termctl.color.set_bg(r: number, g: number, b: number): void
 
   termctl.color.set_fg(0, 0, 0);
+
   // (or) css style hex colors
   termctl.color.set_fg(0x000000); // 0xRRGGBB format
   ```
@@ -100,7 +102,4 @@ const termctl = require("termctl");
   termctl.color.reset_styles();
   ```
 
-> <b>Note:</b> We are just using escape sequences inside these methods for changing styles. So resetting styles before exiting is always good idea.
-
-
-> Test scripts goes inside _tests/test.js_ You can also use it as reference (i.e) Examples.
+> **Note:** We are just using escape sequences inside these methods for changing styles. So resetting styles before exiting is always a good idea.
