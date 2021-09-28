@@ -17,6 +17,12 @@ const termctl = require("../index.js");
 
         // validation...
 
+
+        // colors from https://www.materialpalette.com/pink/red
+        termctl.color.set_bg(0xC2185B); // Dark Primary Color
+        termctl.color.set_fg(0xFFFFFF); // Text / Icon
+        
+
         termctl.set_italic();
         console.log("\nLogin successful...");
     } catch(err) {

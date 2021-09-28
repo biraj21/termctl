@@ -20,7 +20,7 @@ module.exports = {
         if (rl == null)
             throw new Error("Call init() once to use gets()");
 
-        rl.output = echo ? stdout: null;
+        rl.output = echo ? stdout : null;
 
         if (!echo)
             stdout.write(query);
@@ -45,6 +45,10 @@ module.exports = {
     /***  Styles  ***/
     color: {
         set_bg(r, g, b) {
+            if (g === undefined && b === undefined) {
+                stdout.write(`\x1b[48;2;${(r & 0xFF0000) >> 16 };${(r & 0x00FF00) >> 8};${ r & 0x0000FF}m`);
+                return;
+            }
             stdout.write(`\x1b[48;2;${r};${g};${b}m`);
         },
 
@@ -53,6 +57,10 @@ module.exports = {
         },
 
         set_fg(r, g, b) {
+            if (g === undefined && b === undefined) {
+                stdout.write(`\x1b[38;2;${(r & 0xFF0000) >> 16 };${(r & 0x00FF00) >> 8};${ r & 0x0000FF}m`);
+                return;
+            }
             stdout.write(`\x1b[38;2;${r};${g};${b}m`);
         },
 
