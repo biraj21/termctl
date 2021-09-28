@@ -46,6 +46,8 @@ Just using escape sequences inside these methods for changing styles.
   // termctl.color.set_bg(r: number, g: number, b: number): void
 
   termctl.color.set_bg(255, 255, 100);
+  // (or) css style hex colors
+  termctl.color.set_fg(0xFFFF64); // 0xRRGGBB format
   ```
 
 - Reset background color to default
@@ -60,6 +62,8 @@ Just using escape sequences inside these methods for changing styles.
   // termctl.color.set_bg(r: number, g: number, b: number): void
 
   termctl.color.set_fg(0, 0, 0);
+  // (or) css style hex colors
+  termctl.color.set_fg(0x000000); // 0xRRGGBB format
   ```
 
 - Reset foreground color to default
