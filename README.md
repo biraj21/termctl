@@ -47,7 +47,7 @@ Just using escape sequences inside these methods for changing styles.
 
   termctl.color.set_bg(255, 255, 100);
   // (or) css style hex colors
-  termctl.color.set_fg(0xFFFF64); // 0xRRGGBB format
+  termctl.color.set_bg(0xFFFF64); // 0xRRGGBB format
   ```
 
 - Reset background color to default
